@@ -1,1 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.pd8-TB{
+  padding: 0.8rem 0;
+}
+
+.bg-blue{
+  background-color: #1E90FF;
+}
+
+.bg-green{
+  background-color: green;
+}
+
+.pd12-TB{
+  padding: 1.2rem 0;
+}
+
+
+.pd8-TB{
+  padding: 0.8rem 0;
+}
+
+.pd24{
+  padding: 1.2rem 2.4rem;
+}
+
+.mrg24-T{
+  margin-top: 2.4rem;
+}
+
+.mrg64-T{
+  margin-top: 6.4rem;
+}
+
+.mrg64-LR{
+  margin: 0 218px;
+}
+
+.t-blue{
+  color: #1E90FF;
+}
+
+.t-end{
+  text-align: end;
+}
+
+.t-end{
+  text-align: center;
+}
+
+.fs-12{
+  font-size: 1.2rem;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  margin: .5rem 0;
+}
+
+img {
+  width: 100%;
+}
+
+.mat-h1{
+  margin: 0 !important;
+}
+
+.form-input {
+  width: 90%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,18 @@
+<header>
+  <nav class="mrg64-LR mat-body" fxLayout="row" fxLayoutAlign="center stretch">
+    <a fxFlex=30 routerLink="/" class="mat-h1 t-blue" fxLayoutAlign="center center">E Commerce</a>
+    <div fxFlex=40 fxLayout="row" fxLayoutAlign="start center">
+      <a routerLink="/" [ngClass]="{'active': route=='/'}" class="pd24" (click)="route='/'">Home</a>
+      <a routerLink="/products" routerLinkActive="active" class="pd24" (click)="route='/products'">Products</a>
+      <a routerLink="/cart" routerLinkActive="active" class="pd24" (click)="route='/cart'">Cart</a>
+      <a routerLink="/orders" routerLinkActive="active" class="pd24" (click)="route='/orders'">Orders</a>
+    </div>
+    <div fxFlex=30 class="t-end" fxLayoutAlign="center center"><a class="mat-h1 t-blue" *ngIf="isAuthenticated"
+        (click)="onLogout()">{{ 'Logout' }}</a>
+    </div>
+    <div fxFlex=20 class="t-end" fxLayoutAlign="center center"><a routerLink="/auth" class="mat-h1 t-blue"
+        *ngIf="!isAuthenticated">{{ 'Sign In' }}</a>
+    </div>
+  </nav>
+</header>
+<mat-divider></mat-divider>

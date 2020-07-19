@@ -1,0 +1,26 @@
+<section class="mrg64-LR" fxLayout="column" fxLayoutAlign="space-evenly stretch">
+
+  <div fxLayout="row" fxLayoutAlign="space-evenly stretch" class="mrg24-T">
+    <mat-card class="example-card" *ngFor="let p of prods | 
+    slice: lowValue : highValue" fxFlex>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ p.title }}</mat-card-title>
+        <mat-card-subtitle>{{ p.price }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        {{p.description}}
+      </mat-card-content>
+      <mat-card-actions fxLayoutAlign="center">
+        <button mat-raised-button>Details</button>
+        <button mat-raised-button>Add to Cart</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <mat-paginator class="paginator--centered" [length]="prods.length" [pageSize]="pageSize"
+    (page)="pageEvent = getPaginatorData($event)">
+  </mat-paginator>
+
+</section>

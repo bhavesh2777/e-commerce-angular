@@ -1,0 +1,67 @@
+<section class="mrg64-LR mat-body " fxLayout="row" fxLayoutAlign="space-evenly stretch">
+  <div class="mrg64-T">
+    <p class="mat-h3">Try us for free</p>
+    <p class="mat-h1 pd8-TB">{{isLoginMode? 'Login' : 'Sign Up'}}</p>
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+
+      <div class="pd8-TB" *ngIf="!isLoginMode">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="John" formControlName="nameControl">
+          <mat-error *ngIf="!loginForm.value.nameControl.valid">
+            Please enter a valid name
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="pd8-TB">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="example@email.com" formControlName="emailControl">
+          <mat-error *ngIf="!loginForm.value.emailControl.valid">
+            Please enter a valid email address
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="pd8-TB">
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="passwordControl">
+          <button type="button" mat-raised-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="!loginForm.value.passwordControl.valid">
+            Passowrd needs to be <strong>6</strong> characters long
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="pd8-TB">
+        <button type="submit" mat-raised-button [disabled]='!loginForm.valid'>
+          {{isLoginMode ? 'Login' : 'Sign Up'}}</button>
+      </div>
+
+    </form>
+    <div class="mat-h3 ">
+      <p> Or Sign In with Google OAuth </p>
+      <button type="button" mat-raised-button class="mat-h3" (click)="signInWithGoogle()">
+        <mat-icon svgIcon="google"></mat-icon>Sign In with Google
+      </button>
+    </div>
+  </div>
+  
+  <mat-divider [vertical]="true"></mat-divider>
+  <div>
+    <div class="mat-h3 mrg64-T" *ngIf="isLoginMode">
+      <p> Don't have an account? Go to </p>
+      <button type="button" mat-raised-button class="mat-h3" (click)="onSwitchMode()">Sign up</button>
+    </div>
+    <div class="mat-h3 mrg64-T" *ngIf="!isLoginMode">
+      <p> Already Have an account? Go to </p>
+      <button type="button" mat-raised-button class="mat-h3" (click)="onSwitchMode()">Login</button>
+    </div>
+  </div>
+
+</section>
